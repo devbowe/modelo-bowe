@@ -35,7 +35,13 @@ const DocsScreen = () => {
                     <meta name="description" content="" />
                 </Head>
 
-                <Heading as="h2" size="lg" center spacing gradient>
+                <Heading
+                    as="h2"
+                    size="lg"
+                    center="true"
+                    spacing="true"
+                    gradient="true"
+                >
                     Documentação
                 </Heading>
 
