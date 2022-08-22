@@ -19,12 +19,6 @@ export const Content = styled.div`
 `;
 
 export const LinkWrapper = styled.div`
-    ${(props) =>
-        props.active &&
-        css`
-            color: #fdfdfd;
-        `}
-
     position: relative;
 
     &::after,
