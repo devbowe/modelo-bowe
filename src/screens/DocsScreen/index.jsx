@@ -27,7 +27,7 @@ const DocsScreen = () => {
         (async () => {
             if (!data) {
                 const { secoes } = await api_fetch();
-                setData({ secoes: secoes });
+                setData({ sections: secoes });
             } else {
                 return;
             }
@@ -70,7 +70,12 @@ const DocsScreen = () => {
                     ))}
                 </S.CustomListRender>
 
-                <div>{currentActive}</div>
+                {data.sections && currentActive === "sections" && (
+                    <h1>Lista de seções</h1>
+                )}
+                {data.components && currentActive === "components" && (
+                    <h1>Lista de componentes</h1>
+                )}
             </Container>
         </Layout>
     );
