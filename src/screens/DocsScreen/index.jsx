@@ -70,12 +70,6 @@ const DocsScreen = () => {
                     ))}
                 </S.CustomListRender>
 
-                {data.sections && currentActive === "sections" && (
-                    <h1>Lista de seções</h1>
-                )}
-                {data.components && currentActive === "components" && (
-                    <h1>Lista de componentes</h1>
-                )}
             </Container>
         </Layout>
     );
