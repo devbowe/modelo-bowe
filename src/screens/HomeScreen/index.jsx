@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import Layout from "../../components/patterns/Layout";
 import request from "graphql-request";
 import Container from "../../components/Container";
-import Image from "next/image";
 import Head from "next/head";
-import Button from "../../components/Button";
+import DocumentationCard from "../../components/DocumentationCard";
 
 async function api_fetch() {
     try {
@@ -54,28 +53,7 @@ const HomeScreen = () => {
             <Container>
                 {secoes &&
                     secoes.map((sec) => (
-                        <div
-                            key={sec.titulo}
-                            style={{ border: "1px solid gray" }}
-                        >
-                            <h2>{sec.titulo}</h2>
-                            <p>{sec.descricao}</p>
-                            <Image
-                                src={sec.imagem.url}
-                                alt={sec.titulo}
-                                width={500}
-                                height={200}
-                            />
-                            <Button
-                                onClick={() => {
-                                    window.navigator.clipboard.writeText(
-                                        sec.codigo
-                                    );
-                                }}
-                            >
-                                Copiar código HTML
-                            </Button>
-                        </div>
+                        <DocumentationCard key={sec.titulo} {...sec} />
                     ))}
             </Container>
         </Layout>
