@@ -6,6 +6,8 @@ import { GlobalStyles } from "../src/theme/GlobalStyles";
 import { ResetStyles } from "../src/theme/ResetStyles";
 import { theme } from "../src/theme/theme";
 
+import DataContextProvider from "../src/context/DataContext";
+
 function MyApp({ Component, pageProps }) {
     return (
         <ThemeProvider theme={theme}>
@@ -27,7 +29,9 @@ function MyApp({ Component, pageProps }) {
             <ResetStyles />
             <GlobalStyles />
 
-            <Component {...pageProps} />
+            <DataContextProvider>
+                <Component {...pageProps} />
+            </DataContextProvider>
         </ThemeProvider>
     );
 }

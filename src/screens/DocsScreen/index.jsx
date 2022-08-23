@@ -5,6 +5,9 @@ import Heading from "../../components/Heading";
 import Layout from "../../components/patterns/Layout";
 import * as S from "./styles";
 
+import { useData } from "../../context/DataContext";
+import api_fetch from "../../services/api_fetch";
+
 const listToRender = [
     {
         label: "Seções",
@@ -18,14 +21,22 @@ const listToRender = [
 
 const DocsScreen = () => {
     const [currentActive, setCurrentActive] = useState("");
+    const { data, setData } = useData();
+
+    useEffect(() => {
+        (async () => {
+            if (!data) {
+                const { secoes } = await api_fetch();
+                setData({ secoes: secoes });
+            } else {
+                return;
+            }
+        })();
+    }, []);
 
     function handleToggleActive(newActive) {
         setCurrentActive(newActive);
     }
-
-    useEffect(() => {
-        console.log(currentActive);
-    }, [currentActive]);
 
     return (
         <Layout>
