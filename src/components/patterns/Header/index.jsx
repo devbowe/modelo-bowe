@@ -24,7 +24,9 @@ const Header = () => {
                             <S.LinkWrapper
                                 key={link.path}
                                 active={
-                                    router.pathname === link.path ? true : false
+                                    router.pathname === link.path
+                                        ? "true"
+                                        : "false"
                                 }
                             >
                                 <Link href={link.path}>{link.label}</Link>

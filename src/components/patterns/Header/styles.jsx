@@ -20,6 +20,7 @@ export const Content = styled.div`
 
 export const LinkWrapper = styled.div`
     position: relative;
+    color: ${(props) => (props.active === "true" ? "#fff" : "unset")};
 
     &::after,
     &::after {
