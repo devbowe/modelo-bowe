@@ -18,11 +18,12 @@ export const CardWrapper = styled.article`
 `;
 
 export const ImageWrapper = styled.div`
-    display: flex;
-    justify-content: center;
+    display: grid;
     margin-block: 2rem;
 
     img {
         object-fit: cover;
+        width: 100%;
+        height: 100%;
     }
 `;

@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import React, { useState } from "react";
 import Button from "../Button";
 import Heading from "../Heading";
@@ -24,7 +24,7 @@ const DocumentationCard = ({ titulo, codigo, descricao, imagem }) => {
             </Heading>
             <p>{descricao}</p>
             <S.ImageWrapper>
-                <Image src={imagem.url} alt={titulo} width={500} height={300} />
+                <img src={imagem.url} alt={titulo} />
             </S.ImageWrapper>
             <Button
                 center="true"

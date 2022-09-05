@@ -2,6 +2,7 @@ import Head from "next/head";
 import React, { useEffect, useState } from "react";
 import Container from "../../components/Container";
 import Heading from "../../components/Heading";
+import DocumentationCard from "../../components/DocumentationCard";
 import Layout from "../../components/patterns/Layout";
 import * as S from "./styles";
 
@@ -20,8 +21,10 @@ const listToRender = [
 ];
 
 const DocsScreen = () => {
-    const [currentActive, setCurrentActive] = useState("");
+    const [currentActive, setCurrentActive] = useState("sections");
     const { data, setData } = useData();
+
+    console.log(data);
 
     useEffect(() => {
         (async () => {
@@ -70,9 +73,28 @@ const DocsScreen = () => {
                     ))}
                 </S.CustomListRender>
 
+                <S.SpaceItems>
+                    {data && <RenderLists render={currentActive} data={data} />}
+                </S.SpaceItems>
             </Container>
         </Layout>
     );
 };
+
+function RenderLists(props) {
+    if (props.render === "components") {
+        return <div>Components</div>;
+    }
+
+    if (props.render === "sections") {
+        return (
+            <div>
+                {props.data.sections.map((item) => (
+                    <DocumentationCard key={item.titulo} {...item} />
+                ))}
+            </div>
+        );
+    }
+}
 
 export default DocsScreen;

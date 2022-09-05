@@ -40,3 +40,11 @@ export const CustomListRenderItem = styled.li`
             color: ${(props) => props.theme.colors.accentFirst};
         `}
 `;
+
+export const SpaceItems = styled.div`
+    margin-top: 3rem;
+
+    * + * {
+        margin-top: 3rem;
+    }
+`;
