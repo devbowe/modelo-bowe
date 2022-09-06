@@ -32,7 +32,6 @@ export const ResetStyles = createGlobalStyle`
 
     /* A elements that don't have a class get default styles */
     a:not([class]),a {
-        color: inherit;
         text-decoration: none;
         text-decoration-skip-ink: auto;
     }

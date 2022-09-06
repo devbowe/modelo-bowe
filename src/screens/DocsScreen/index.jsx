@@ -83,7 +83,7 @@ const DocsScreen = () => {
 
 function RenderLists(props) {
     if (props.render === "components") {
-        return <div>Components</div>;
+        return <div></div>;
     }
 
     if (props.render === "sections") {
