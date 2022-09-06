@@ -14,7 +14,7 @@ const Header = () => {
             <Container>
                 <S.Content>
                     <Image
-                        src="/images/logo.svg"
+                        src="/images/logo.png"
                         width={100}
                         height={45}
                         alt=""
