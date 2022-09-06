@@ -15,6 +15,10 @@ export const Content = styled.div`
     nav {
         display: flex;
         gap: 1.5rem;
+
+        a {
+            color: ${(props) => props.theme.colors.light};
+        }
     }
 `;
 
